@@ -4,17 +4,17 @@ This repository is an unofficial fan-made wedding invitation demo.
 
 The following files contain or are derived from third-party game artwork and are **not** licensed under the repository's MIT License:
 
-- `assets/dave-logo.webp`
-- `assets/dave-character.webp`
-- `assets/bancho.webp`
-- `assets/cobra.webp`
-- `assets/bacon.webp`
-- `assets/sea-exploration.webp`
-- `assets/sushi-service.webp`
-- `assets/dave-dive.webp`
-- `assets/dave-key-art.webp`
-- `assets/dave-key-art-clean.webp`
-- `assets/phone-ui.webp`
+- `assets/dave-logo.jpg`
+- `assets/dave-character.jpg`
+- `assets/bancho.jpg`
+- `assets/cobra.jpg`
+- `assets/bacon.jpg`
+- `assets/sea-exploration.jpg`
+- `assets/sushi-service.jpg`
+- `assets/dave-dive.jpg`
+- `assets/dave-key-art.jpg`
+- `assets/dave-key-art-clean.jpg`
+- `assets/phone-ui.jpg`
 
 Character names, game titles, logos, screenshots, artwork, music, and related trademarks belong to their respective owners. Their presence in this repository does not imply endorsement or a grant of rights.
 
