@@ -64,12 +64,18 @@
       <section class="album-section story-section" id="album">
         <div class="water-rays" aria-hidden="true"></div>
         <header class="section-title reveal"><span>♥</span><div><p>CREW PORTRAITS · ABOUT YOU</p><h2>新人影像</h2></div></header>
-        <figure class="album-hero reveal">
-          <img src="./assets/couple-portrait.jpg" alt="蔡松霖与郭晓彤的婚纱合影" loading="lazy" decoding="async" />
-          <figcaption>蔡松霖 &amp; 郭晓彤 · 2026.12.12</figcaption>
-        </figure>
-        <figure class="album-shot reveal"><img src="./assets/couple-standing.jpg" alt="蔡松霖与郭晓彤并肩而立的婚纱照" loading="lazy" decoding="async" /></figure>
-        <figure class="album-shot album-shot-playful reveal"><img src="./assets/couple-play.jpg" alt="蔡松霖与郭晓彤互相指着的俏皮婚纱照" loading="lazy" decoding="async" /></figure>
+        <div class="album-frame reveal">
+          <div class="album-track" id="album-track" role="region" aria-label="新人照片，可左右滑动" tabindex="0">
+            <figure class="album-slide"><img src="./assets/couple-portrait.jpg" alt="蔡松霖与郭晓彤的婚纱合影" loading="lazy" decoding="async" /><figcaption>蔡松霖 &amp; 郭晓彤 · 2026.12.12</figcaption></figure>
+            <figure class="album-slide"><img src="./assets/couple-standing.jpg" alt="蔡松霖与郭晓彤并肩而立的婚纱照" loading="lazy" decoding="async" /><figcaption>并肩 · 等你赴约</figcaption></figure>
+            <figure class="album-slide"><img src="./assets/couple-play.jpg" alt="蔡松霖与郭晓彤互相指着的俏皮婚纱照" loading="lazy" decoding="async" /><figcaption>一生一次的深海任务</figcaption></figure>
+          </div>
+        </div>
+        <div class="album-controls reveal">
+          <button class="album-arrow album-prev" type="button" data-album="prev" aria-label="上一张照片">◀</button>
+          <div><output id="album-index" aria-live="polite">1 / 3</output><div class="album-dots" id="album-dots" aria-hidden="true"></div></div>
+          <button class="album-arrow album-next" type="button" data-album="next" aria-label="下一张照片">▶</button>
+        </div>
       </section>
 
       <section class="crew-section story-section" id="crew">

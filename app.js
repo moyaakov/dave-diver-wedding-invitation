@@ -203,3 +203,35 @@ if (publicRsvpUrl) {
   document.querySelector('#rsvp-edit').addEventListener('click', () => { fillRsvp(savedRsvp); rsvpForm.hidden = false; rsvpSuccess.hidden = true })
   fillRsvp(savedRsvp)
 }
+
+const albumTrack = document.querySelector('#album-track')
+if (albumTrack) {
+  const albumSlides = [...albumTrack.querySelectorAll('.album-slide')]
+  const albumIndex = document.querySelector('#album-index')
+  const albumDots = document.querySelector('#album-dots')
+  albumSlides.forEach(() => albumDots.append(document.createElement('i')))
+  const dots = [...albumDots.children]
+  let currentSlide = 0
+  function showAlbum(index) {
+    currentSlide = Math.max(0, Math.min(albumSlides.length - 1, index))
+    albumTrack.scrollTo({ left: albumSlides[currentSlide].offsetLeft - albumSlides[0].offsetLeft, behavior: reducedMotion ? 'auto' : 'smooth' })
+    albumIndex.textContent = `${currentSlide + 1} / ${albumSlides.length}`
+    dots.forEach((dot, i) => dot.classList.toggle('is-active', i === currentSlide))
+  }
+  document.querySelector('[data-album="prev"]').addEventListener('click', () => showAlbum(currentSlide - 1))
+  document.querySelector('[data-album="next"]').addEventListener('click', () => showAlbum(currentSlide + 1))
+  dots.forEach((dot, i) => dot.addEventListener('click', () => showAlbum(i)))
+  albumTrack.addEventListener('scroll', () => {
+    const nearest = albumSlides.reduce((best, slide, i) => Math.abs((slide.offsetLeft - albumSlides[0].offsetLeft) - albumTrack.scrollLeft) < Math.abs((albumSlides[best].offsetLeft - albumSlides[0].offsetLeft) - albumTrack.scrollLeft) ? i : best, 0)
+    if (nearest !== currentSlide) {
+      currentSlide = nearest
+      albumIndex.textContent = `${nearest + 1} / ${albumSlides.length}`
+      dots.forEach((dot, i) => dot.classList.toggle('is-active', i === nearest))
+    }
+  }, { passive: true })
+  albumTrack.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') { event.preventDefault(); showAlbum(currentSlide - 1) }
+    if (event.key === 'ArrowRight') { event.preventDefault(); showAlbum(currentSlide + 1) }
+  })
+  dots[0].classList.add('is-active')
+}
