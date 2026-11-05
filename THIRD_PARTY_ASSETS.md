@@ -13,7 +13,7 @@ The following files contain or are derived from third-party game artwork and are
 - `assets/sushi-service.webp`
 - `assets/dave-dive.webp`
 - `assets/dave-key-art.webp`
-- `assets/dave-key-art-clean.png`
+- `assets/dave-key-art-clean.webp`
 - `assets/phone-ui.webp`
 
 Character names, game titles, logos, screenshots, artwork, music, and related trademarks belong to their respective owners. Their presence in this repository does not imply endorsement or a grant of rights.
